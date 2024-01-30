@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+void display(int arr[],int size){
+    printf("\nbefore rotation\n");
+    for(int i=0;i<size;i++){
+        
+        printf("%d ",arr[i]);
+    }
+    
+}
+ void rotate_array(int arr[],int size,int k){
+     
+     
+     display(arr,size);
+     int j=k%size;
+     printf("\n after rotation\n");
+    for(int i=0;i<size;i++){
+    printf("%d ",arr[(j+i)%(size)]);
+    
+}
+     
+ }
+
+void main(){
+    int arr[]={1,5,3,4,5,7,2};
+    int size =sizeof(arr)/sizeof(arr[0]);
+    rotate_array(arr,size,3);
+}
+
