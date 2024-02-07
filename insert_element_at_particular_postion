@@ -1,0 +1,38 @@
+/******************************************************************************
+
+                            Online C Compiler.
+                Code, Compile, Run and Debug C program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+// first we need increase the lenght of array
+// need to move the element one pos next to it until we need to have space for particular pos
+// assign element to particular location
+#include <stdio.h>
+void insert_index(int arr[],int n,int pos,int element){
+    n++;
+    int x;
+    
+    for(x=n-1;x>=pos;x--){
+        arr[x+1] =arr[x];
+    }
+    arr[pos]=element;
+    
+    for(int k=0;k<n;k++){
+        
+        printf(" %d",arr[k]);
+    }
+}
+int main()
+{
+    int arr[]={13,65,13,6,4,8,1};
+    
+    int n= sizeof(arr)/sizeof(arr[0]);
+    
+    int pos =2;
+    int element =20;
+    insert_index(arr,n,pos,element);
+  
+    return 0;
+}
