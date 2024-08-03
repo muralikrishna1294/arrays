@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+
+int remove_duplicates(int *nums,int numsize){
+    
+    if(numsize==0)
+    return 0;
+    
+    int k=1;
+    
+    for(int i=1;i<numsize;i++){
+        
+        if(nums[i]!=nums[i-1]){
+                nums[k]    =nums[i];
+              k++;
+        }
+                      
+        
+    }
+    return k;
+    
+}
+int main()
+{
+  int nums[] = {1, 1, 2, 3, 3, 4};
+  int numsize=sizeof(nums)/sizeof(nums[0]);
+  printf("size=%d\n",numsize);
+        int count =   remove_duplicates(nums,numsize);
+
+    for(int j=0;j<count;j++ ){
+        
+         printf("%d",nums[j]);
+    }
+    return 0;
+}
